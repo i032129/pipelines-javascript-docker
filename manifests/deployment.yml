@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ipipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ipipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ipipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ipipelinesjavascriptdocker 
+          image: i032129.azurecr.io/ipipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
